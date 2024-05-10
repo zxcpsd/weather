@@ -7,7 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weather_app/src/common/bloc/app_bloc_observer.dart';
 import 'package:weather_app/src/common/model/dependencies.dart';
 import 'package:weather_app/src/common/util/logger.dart';
-import 'package:weather_app/src/feature/current_weather/data/geolocation_provider_impl.dart';
+import 'package:weather_app/src/feature/current_weather/data/geolocation_repository_impl.dart';
 import 'package:weather_app/src/feature/current_weather/data/weather_repository_impl.dart';
 import 'package:weather_app/src/feature/current_weather/util/assets.dart';
 import 'package:weather_app/src/feature/weather_search/data/city_weather_repository_impl.dart';

@@ -14,7 +14,7 @@ class Dependencies {
   late final Dio weatherApiDio;
   late final Dio geolocationApiDio;
 
-  late final GeolocationProvider geolocationProvider;
+  late final GeolocationRepository geolocationProvider;
   late final WeatherRepository weatherRepository;
 
   late final SuggestionProvider suggestionProvider;

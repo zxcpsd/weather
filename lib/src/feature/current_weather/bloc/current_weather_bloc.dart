@@ -84,7 +84,7 @@ class CurrentWeatherState with _$CurrentWeatherState {
 class CurrentWeatherBloc
     extends Bloc<CurrentWeatherEvent, CurrentWeatherState> {
   CurrentWeatherBloc({
-    required GeolocationProvider geolocationRepository,
+    required GeolocationRepository geolocationRepository,
     required WeatherRepository weatherRepository,
   })  : _geolocationRepository = geolocationRepository,
         _weatherRepository = weatherRepository,
@@ -98,7 +98,7 @@ class CurrentWeatherBloc
     );
   }
 
-  final GeolocationProvider _geolocationRepository;
+  final GeolocationRepository _geolocationRepository;
   final WeatherRepository _weatherRepository;
 
   Future<void> _getCurrentWeather(

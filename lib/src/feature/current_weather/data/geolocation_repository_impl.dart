@@ -3,7 +3,7 @@ import 'package:weather_app/src/feature/current_weather/bloc/interface.dart';
 import 'package:weather_app/src/feature/current_weather/model/location.dart';
 import 'package:weather_app/src/feature/weather_search/bloc/weather_search/interface.dart';
 
-class GeolocationProviderImpl implements GeolocationProvider, GeolocationCache {
+class GeolocationProviderImpl implements GeolocationRepository, GeolocationCache {
   GeolocationProviderImpl({required Dio dio}) : _dio = dio;
 
   final Dio _dio;
