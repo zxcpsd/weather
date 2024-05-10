@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/src/common/localization/bloc/locale_bloc.dart';
 import 'package:weather_app/src/common/localization/generated/app_localizations.dart';
 import 'package:weather_app/src/feature/current_weather/bloc/current_weather_bloc.dart';
 import 'package:weather_app/src/feature/current_weather/widget/carousel_widget.dart';
@@ -44,7 +45,7 @@ class MainScreen extends StatelessWidget {
                   ),
                   slivers: [
                     SliverToBoxAdapter(
-                      child: _MainScreenLayout(
+                      child: _MainLayout(
                         isSmallScreen: isSmallScreen,
                       ),
                     ),
@@ -65,6 +66,23 @@ class MainScreen extends StatelessWidget {
                       child: CircularProgressIndicator(),
                     ),
                   ),
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: TextButton(
+                      onPressed: () {
+                        context.read<LocaleBloc>().add(LocaleEvent.setLocale(
+                          Locale(Localizations.localeOf(context).languageCode == 'en' ? 'ru' : 'en'),
+                        ));
+                      },
+                      child: Text(
+                        Localizations.localeOf(context).languageCode,
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),
@@ -74,8 +92,8 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-class _MainScreenLayout extends StatelessWidget {
-  const _MainScreenLayout({
+class _MainLayout extends StatelessWidget {
+  const _MainLayout({
     required this.isSmallScreen,
   });
 

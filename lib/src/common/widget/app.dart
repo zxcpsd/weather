@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:weather_app/src/common/localization/bloc/locale_bloc.dart';
 import 'package:weather_app/src/common/localization/generated/app_localizations.dart';
 import 'package:weather_app/src/common/model/dependencies.dart';
 import 'package:weather_app/src/common/router/app_router.dart';
@@ -41,17 +42,24 @@ class _AppState extends State<App> {
                 Dependencies.of(context).cityWeatherRepository,
           ),
         ),
+        BlocProvider(
+          create: (context) =>
+              LocaleBloc()..add(const LocaleEvent.loadCachedLocale()),
+        )
       ],
-      child: MaterialApp.router(
-        onGenerateTitle: (context) => AppLocalizations.of(context)!.appName,
-        localizationsDelegates: const [
-          ...AppLocalizations.localizationsDelegates,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: AppLocalizations.supportedLocales,
-        routerConfig: _appRouter.config(),
+      child: BlocBuilder<LocaleBloc, LocaleState>(
+        builder: (context, state) => MaterialApp.router(
+          onGenerateTitle: (context) => AppLocalizations.of(context)!.appName,
+          locale: state.locale,
+          localizationsDelegates: const [
+            ...AppLocalizations.localizationsDelegates,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
+          routerConfig: _appRouter.config(),
+        ),
       ),
     );
   }
