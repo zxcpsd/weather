@@ -1,0 +1,17 @@
+{
+  "appName": "Weather",
+  "updated": "Updated {message} ago",
+  "lessThanMinute": "<1m",
+  "greaterThanDay": ">1d",
+  "hourShort": "h",
+  "minuteShort": "m",
+  "thunderstorm": "Thunderstorm",
+  "drizzle": "Drizzly",
+  "rain": "Rainy",
+  "snow": "Snowy",
+  "mist": "Misty",
+  "clear": "Clear",
+  "clouds": "Cloudy",
+  "somethingWentWrong": "Something went wrong",
+  "nKmAway": "{km} km away"
+}

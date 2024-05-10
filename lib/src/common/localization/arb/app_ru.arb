@@ -1,0 +1,17 @@
+{
+  "appName": "Погода",
+  "updated": "Обновлено {message} назад",
+  "greaterThanDay": "больше дня",
+  "lessThanMinute": "меньше минуты",
+  "hourShort": "ч",
+  "minuteShort": "м",
+  "thunderstorm": "Гроза",
+  "drizzle": "Морось",
+  "rain": "Дождь",
+  "snow": "Снег",
+  "mist": "Туман",
+  "clear": "Ясно",
+  "clouds": "Облачно",
+  "somethingWentWrong": "Что-то пошло не так",
+  "nKmAway": "{km} км от вас"
+}
